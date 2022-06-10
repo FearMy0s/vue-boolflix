@@ -1,6 +1,6 @@
 <template>
     <div class="container">     
-        <FilmCard :films="Library.films"/>
+        <FilmCard :films="Library.films" :TvSeries="Library.TvSeries"/>
     </div>
 </template>
 
@@ -14,8 +14,6 @@ export default {
             Library,
         }
     },
-
-
     components: {
         FilmCard,
                 }

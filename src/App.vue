@@ -1,14 +1,17 @@
 <template>
   <div id="app">
+    <BaseHeader/> 
     <BaseMain/>
   </div>
 </template>
 
 <script>
+import BaseHeader from './components/main/BaseHeader.vue'
 import BaseMain from './components/main/BaseMain.vue'
 export default {
   name: 'App',
   components:{
+    BaseHeader,
     BaseMain,
   }
 }
