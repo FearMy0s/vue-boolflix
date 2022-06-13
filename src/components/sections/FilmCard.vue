@@ -106,6 +106,7 @@ flex-shrink: 0;
     right: 0;
     color: white;
     overflow-y:auto ;
+    display: none;
 }
 .card:hover + .infos{
  display: block;
