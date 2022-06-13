@@ -1,25 +1,33 @@
 <template>
   <section class="films">
-      <ul>
-          <h1>FILM</h1>
-          <li class="film-list" v-for="FilmData in films" :key="FilmData.id">
-                <img :src="GetUrl(FilmData.poster_path)" :alt="FilmData.title">
-                {{FilmData.original_title}}
-                {{FilmData.title}}
-                <img class="flag-style" :src="getFlag(FilmData.original_language)"/>
-                <span class="star" v-html="TotalVote(FilmData.vote_average)"></span>
-          </li>
-      </ul>
-      <ul>
-            <h1>SERIE TV</h1>
-            <li v-for="SerieData in TvSeries" :key="SerieData.id">
-                <img :src="GetUrl(SerieData.poster_path)" :alt="SerieData.title">
-                {{SerieData.name}} 
-                {{SerieData.original_name}} 
-                <img class="flag-style" :src="getFlag(SerieData.original_language)"/>
-                <span class="star" v-html="TotalVote(SerieData.vote_average)"></span>
-            </li>
-        </ul>
+    <div class="container">
+                <h1>FILM</h1>
+            <div class="product-container">
+                <div class="card"  v-for="FilmData in films" :key="FilmData.id">
+                        <img :src="GetUrl(FilmData.poster_path)" :alt="FilmData.title">
+                        <div class="infos">
+                            <h3>Titolo Originale : {{FilmData.original_title}}</h3>
+                            <h3>Titolo : {{FilmData.title}}</h3>
+                            <span>{{FilmData.overview}}</span><br>
+                            <img class="flag-style" :src="getFlag(FilmData.original_language)"/><br>
+                            <span class="star" v-html="TotalVote(FilmData.vote_average)"></span>
+                        </div>
+                </div>
+            </div>
+                <h1>SERIE TV</h1>
+            <div class="product-container">
+                    <div class="card" v-for="SerieData in TvSeries" :key="SerieData.id">
+                        <img :src="GetUrl(SerieData.poster_path)" :alt="SerieData.title">
+                        <div class="infos">
+                                <h3>Nome Originale:{{SerieData.name}} </h3>
+                                <h3>Nome: {{SerieData.original_name}}</h3>
+                                <span>{{SerieData.overview}}</span><br>
+                                <img class="flag-style" :src="getFlag(SerieData.original_language)"/><br>
+                                <span class="star" v-html="TotalVote(SerieData.vote_average)"></span>
+                            </div>      
+                        </div>
+                    </div>
+    </div>
   </section>
 </template>
 
@@ -72,14 +80,35 @@ export default {
     }
 }
 </script>
-
-<style>
+<style lang="scss" scoped>
+.card{
+position: relative;
+width: 300px;
+flex-shrink: 0;
+}
  .star {
         color: yellow;
     }
  .flag-style{
      width: 50px;
      height: 40px;
+    }
+ img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    }
+    .infos{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    overflow-y:auto ;
+}
+.card:hover + .infos{
+ display: block;
 
 }
 

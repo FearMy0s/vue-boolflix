@@ -1,7 +1,9 @@
 <template>
-    <div class="container">     
-        <FilmCard :films="Library.films" :TvSeries="Library.TvSeries"/>
-    </div>
+    <main>
+        <div class="container">     
+            <FilmCard :films="Library.films" :TvSeries="Library.TvSeries"/>
+        </div>
+    </main>
 </template>
 
 <script>
@@ -21,6 +23,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

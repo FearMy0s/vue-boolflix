@@ -53,6 +53,17 @@ export default {
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.SearchBar{
+    margin-top: 10px;
+}
+input{
+    border: none;
+    height: 20px;
+}
+button{
+    margin-left: 5px;
+    border-radius: 0;
+}
 
 </style>

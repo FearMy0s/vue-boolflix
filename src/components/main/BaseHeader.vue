@@ -1,6 +1,7 @@
 <template>
     <header>
         <div class="container">
+            <h1>BOOLFLIX</h1>
             <SearchBarSection/>
         </div>
     </header>
@@ -17,4 +18,12 @@
 </script>
 
 <style lang="scss" scoped>
+.container{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+ }
+ h1{
+    color: red;
+ }
 </style>
