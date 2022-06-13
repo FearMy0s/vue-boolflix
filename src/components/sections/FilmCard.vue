@@ -19,7 +19,7 @@
                     <div class="card" v-for="SerieData in TvSeries" :key="SerieData.id">
                         <img :src="GetUrl(SerieData.poster_path)" :alt="SerieData.title">
                         <div class="infos">
-                                <h3>Nome Originale:{{SerieData.name}} </h3>
+                                <h3>Nome Originale : {{SerieData.name}} </h3>
                                 <h3>Nome: {{SerieData.original_name}}</h3>
                                 <span>{{SerieData.overview}}</span><br>
                                 <img class="flag-style" :src="getFlag(SerieData.original_language)"/><br>
@@ -99,6 +99,8 @@ flex-shrink: 0;
     border: 1px solid black;
     }
     .infos{
+     background-color:  rgba(0,0,0,0.7);
+    opacity: 0;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -106,10 +108,13 @@ flex-shrink: 0;
     right: 0;
     color: white;
     overflow-y:auto ;
-    display: none;
+
 }
-.card:hover + .infos{
- display: block;
+.card:hover{
+ color: black;
+ .infos {
+    opacity: 1;
+ }
 }
 
 </style>
