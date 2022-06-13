@@ -110,7 +110,6 @@ flex-shrink: 0;
 }
 .card:hover + .infos{
  display: block;
-
 }
 
 </style>
